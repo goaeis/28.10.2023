@@ -1,1 +1,138 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/products')
+def products():
+    return render_template('products.html')
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@app.route('/contacts')
+def contacts():
+    return render_template('contacts.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/product1')
+def product1():
+    return render_template('product1.html')
+
+@app.route('/product2')
+def product2():
+    return render_template('product2.html')
+
+if __name__ == "__main__":
+    app.run()
+
+.bg-image {
+    /* Настройки картинки */
+    background-image: url('../images/empty.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Прозрачность картинки */
+    height: 700px;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5%;
+}
+
+img {
+    float: left;
+    border: double 5px #2c3e50;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+table {
+    margin: 15px auto; /* Сверху и снизу таблицы отступы 15 пикселей, auto - центрирует таблицу */
+    font-size: 16px;
+    font-family: sans-serif; /* Подключаем красивый шрифт */
+    width: 90%; /* Ширина таблицы относительно всей страницы */
+    border: double 5px #2c3e50; /* Создаем двойную границу с толщиной 5 пикселей */
+}
+
+table th,
+table td {
+    padding: 12px 15px; 
+}
+
+table tr:nth-of-type(even) { /* Каждый четный элемент имеет фоновый цвет #ecf0f1 */
+    background-color: #ecf0f1;
+}
+table tr:hover{ /* При наведении на строчку меняем цвет фона и текста */
+    background-color: #95a5a6;
+    color: white;
+}
+
+button {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+}
+header {
+    height: 60px; /* Высота шапки */
+    background-color: #34495e; /* Цвет фона  */
+    display: flex; /* Включаем гибкость блока */
+}
+ul {
+    list-style: none; /* Убираем маркеры в списке */
+    display: flex; /* Включаем гибкость блока */
+    justify-content: start; /* Выравниваем по левому краю ссылки */
+}
+  
+li a {
+    color: white; /* Цвет текста */
+    padding: 22px; /* Создаем поля вокруг ссылок по 22 пикселя */
+    font-size: 20px; /* Размер шрифта */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+  
+li a:hover {
+    background-color: #2c3e50; /* Цвет фона при наведении на кнопку */
+}
+
+.card {
+    display: inline-block;
+    width: 40%;
+    margin: 3%;
+    background-color: #ecf0f1;
+    border: double 5px #2c3e50;
+    text-decoration: none; 
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.main {
+    text-align: center;
+}
+
+.card:hover {
+    background-color: #95a5a6;
+}
+.prom {
+    color: #34495e;
+    font-size: 26px;
+    font-weight: bold;
+}
+
 
